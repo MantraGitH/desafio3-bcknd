@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "title": "product 1",
+        "description": "qwerty",
+        "price": 10,
+        "thumbnail": "nada.jpg",
+        "code": 5,
+        "stock": 2
+    },
+    {
+        "id": 2,
+        "title": "product 2",
+        "description": "qwerty",
+        "price": 20,
+        "thumbnail": "nada.jpg",
+        "code": 25,
+        "stock": 2
+    },
+    {
+        "id": 3,
+        "title": "product 3",
+        "description": "qwerty",
+        "price": 30,
+        "thumbnail": "nada.jpg",
+        "code": 8,
+        "stock": 2
+    },
+    {
+        "id": 4,
+        "title": "product 4",
+        "description": "qwerty",
+        "price": 40,
+        "thumbnail": "nada.jpg",
+        "code": 3,
+        "stock": 2
+    },
+    {
+        "id": 5,
+        "title": "product 5",
+        "description": "qwerty",
+        "price": 50,
+        "thumbnail": "nada.jpg",
+        "code": 78,
+        "stock": 2
+    },
+    {
+        "id": 6,
+        "title": "product 6",
+        "description": "qwerty",
+        "price": 60,
+        "thumbnail": "nada.jpg",
+        "code": 24,
+        "stock": 2
+    },
+    {
+        "id": 7,
+        "title": "product 7",
+        "description": "qwerty",
+        "price": 70,
+        "thumbnail": "nada.jpg",
+        "code": 9,
+        "stock": 2
+    },
+    {
+        "id": 8,
+        "title": "product 8",
+        "description": "qwerty",
+        "price": 80,
+        "thumbnail": "nada.jpg",
+        "code": 22,
+        "stock": 2
+    },
+    {
+        "id": 9,
+        "title": "product 9",
+        "description": "qwerty",
+        "price": 90,
+        "thumbnail": "nada.jpg",
+        "code": 18,
+        "stock": 2
+    },
+    {
+        "id": 10,
+        "title": "product 10",
+        "description": "qwerty",
+        "price": 100,
+        "thumbnail": "nada.jpg",
+        "code": 55,
+        "stock": 2
+    }
+]

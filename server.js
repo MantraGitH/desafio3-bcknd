@@ -1,7 +1,8 @@
 import express from 'express'
-import { productos } from "./productos.js";
+import { ProductManager } from './ProductManager.js';
 
 const app = express();
+const productManager = new ProductManager("./Productos.json");
 const port = 8080;
 
 
@@ -9,30 +10,41 @@ app.get('/', (req, res) => {
     res.send('Server UP');
   });
 
-// Ruta para obtener todos los productos.
-app.get('/products', (req, res) => {
-  res.json(productos);
+  app.get("/products", async (req, res) => {
+    const {limit} = req.query;
+
+    try {
+        const products = await productManager.getProducts();
+       
+        if(limit){
+            res.json(products.slice(0, parseInt(limit)));
+        }else{
+            res.json(products);
+        };
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    };
 });
 
-// Ruta para obtener productos del primero al quinto
-app.get('/products/5', (req, res) => {
-    const limit = req.query.limit;
-    if (limit) {
-      const limitedProducts = productos.slice(0, 5); // 
-      res.json(limitedProducts);
-    } else {
-      res.json(productos);
-    }
-  });
+app.get("/products/limit=5", async (req, res) => {
+  try {
+    const products = await productManager.getProducts();
+    res.json(products.slice(0, 5));
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
 
-// Ruta para obtener un producto por su ID 
-app.get('/products/:id', (req, res) => {
-  const productId = req.params.id;
-  const product = productos.find(p => p.id == productId);
-  if (product) {
+
+app.get('/products/:pid', async (req, res) => {
+  const { pid } = req.params;
+  const pidNumber = Number(pid)
+  
+  try {
+    const product = await productManager.getProductById(pidNumber);
     res.json(product);
-  } else {
-    res.status(404).json({ error: 'El producto no existe' });
+  } catch (error) {
+    res.status(404).json({ error: error.message });
   }
 });
 
